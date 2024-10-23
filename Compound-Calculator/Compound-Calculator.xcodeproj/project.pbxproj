@@ -21,6 +21,7 @@
 		19F969812CC90DF600DF2593 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 19F969802CC90DF600DF2593 /* FirebaseStorage */; };
 		19F969842CC9107500DF2593 /* Basics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F969832CC9107500DF2593 /* Basics.swift */; };
 		19F969862CC910A900DF2593 /* Accumulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F969852CC910A900DF2593 /* Accumulation.swift */; };
+		19F969892CC9164F00DF2593 /* CommonButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F969882CC9164F00DF2593 /* CommonButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		19F969772CC90C5F00DF2593 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19F969832CC9107500DF2593 /* Basics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basics.swift; sourceTree = "<group>"; };
 		19F969852CC910A900DF2593 /* Accumulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accumulation.swift; sourceTree = "<group>"; };
+		19F969882CC9164F00DF2593 /* CommonButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		19F9694C2CC909A500DF2593 /* Compound-Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				19F969872CC9163300DF2593 /* Common */,
 				19F969822CC9105D00DF2593 /* Calculator */,
 				19F9694D2CC909A500DF2593 /* Compound_CalculatorApp.swift */,
 				19F9694F2CC909A500DF2593 /* ContentView.swift */,
@@ -150,6 +153,14 @@
 				19F969852CC910A900DF2593 /* Accumulation.swift */,
 			);
 			path = Calculator;
+			sourceTree = "<group>";
+		};
+		19F969872CC9163300DF2593 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				19F969882CC9164F00DF2593 /* CommonButtonView.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 				19F969842CC9107500DF2593 /* Basics.swift in Sources */,
 				19F969502CC909A500DF2593 /* ContentView.swift in Sources */,
 				19F969862CC910A900DF2593 /* Accumulation.swift in Sources */,
+				19F969892CC9164F00DF2593 /* CommonButtonView.swift in Sources */,
 				19F9694E2CC909A500DF2593 /* Compound_CalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

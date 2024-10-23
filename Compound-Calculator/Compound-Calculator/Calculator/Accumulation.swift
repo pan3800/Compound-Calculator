@@ -9,7 +9,11 @@ import SwiftUI
 
 struct Accumulation: View {
     var body: some View {
-        Text("Accumulation")
+        CommonButtonView {
+            VStack {
+                Text("Accumulation")
+            }
+        }
     }
 }
 

@@ -9,7 +9,11 @@ import SwiftUI
 
 struct Basics: View {
     var body: some View {
-        Text("Basics")
+        CommonButtonView {
+            VStack {
+                Text("Basisc")
+            }
+        }
     }
 }
 
