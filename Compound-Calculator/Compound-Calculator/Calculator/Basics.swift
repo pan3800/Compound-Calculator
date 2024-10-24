@@ -19,8 +19,11 @@ struct Basics: View {
             VStack(spacing: 20) {
                 Text("복리 계산기")
                     .font(.largeTitle)
-        
-                TextField("초기 금액", text: $principal)
+                
+                TextField("초기 금액 입력", text: Binding(
+                        get: { formatNumber(principal) },
+                        set: { principal = $0.replacingOccurrences(of: ",",with: "") }
+                    ))
                     .keyboardType(.decimalPad)
                     .padding()
                     .border(Color.gray)
@@ -30,12 +33,23 @@ struct Basics: View {
                     .padding()
                     .border(Color.gray)
                 
-                HStack {
-                    TextField("수익률 입력 (연 수익률 %)", text: $rate)
+                
+                ZStack {
+                    TextField("수익률 입력 (연 수익률)", text: $rate)
                         .keyboardType(.decimalPad)
                         .padding()
                         .border(Color.gray)
+                              
+                        // TextField 오른쪽에 % 기호를 추가
+                        HStack {
+                            Spacer() // 오른쪽에 붙이기 위해 Spacer 사용
+                            Text("%")
+                                .padding(.trailing, 10) // 적당한 간격을 유지
+                                .foregroundColor(.gray)
+                        }
+                        .padding(.horizontal)
                 }
+                
                 
                 Button(action: calculateCompoundInterest) {
                     Text("계산하기")
@@ -56,16 +70,23 @@ struct Basics: View {
         .padding()
     }
     
-    func calculateCompoundInterest() {
-         let principalAmount = Double(principal) ?? 0
-         let interestRate = Double(rate) ?? 0
-         let timePeriod = Double(time) ?? 0
-         
-         // 복리 계산 공식: A = P(1 + r/n)^(nt)
-         // 여기서 n은 1 (연 복리)로 가정
-         let amount = principalAmount * pow(1 + interestRate / 100, timePeriod)
-         result = amount
-     }
+    func formatNumber(_ value: String) -> String {
+           guard let doubleValue = Double(value) else { return value }
+           
+           let formatter = NumberFormatter()
+           formatter.numberStyle = .decimal
+           return formatter.string(from: NSNumber(value: doubleValue)) ?? value
+       }
+       
+       func calculateCompoundInterest() {
+           let principalAmount = Double(principal) ?? 0
+           let interestRate = (Double(rate) ?? 0) / 100 // 연 이자율
+           let timePeriod = Double(time) ?? 0
+           
+           // 단일 원금 기준 복리 계산 공식: A = P(1 + r)^t
+           let amount = principalAmount * pow(1 + interestRate, timePeriod)
+           result = amount
+       }
 }
 
 struct Basics_Previews: PreviewProvider {
