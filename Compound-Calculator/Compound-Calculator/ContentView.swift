@@ -13,7 +13,7 @@ struct ContentView: View {
             VStack {
                 
                 NavigationLink(destination: Basics()) {
-                    Text("Basics")
+                    Text("기본 계산")
                         .frame(width: 200, height: 50)
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -22,7 +22,7 @@ struct ContentView: View {
                 
            
                 NavigationLink(destination: Accumulation()) {
-                    Text("Accumulation")
+                    Text("적립식 계산")
                         .frame(width: 200, height: 50)
                         .background(Color.blue)
                         .foregroundColor(.white)

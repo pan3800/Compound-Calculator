@@ -17,7 +17,7 @@ struct Basics: View {
         CommonButtonView {
             
             VStack(spacing: 20) {
-                Text("복리 계산기")
+                Text("기본 계산기")
                     .font(.largeTitle)
                 
                 TextField("초기 금액 입력", text: Binding(
