@@ -19,35 +19,39 @@ struct Basics: View {
             VStack(spacing: 20) {
                 Text("기본 계산기")
                     .font(.largeTitle)
+                    .padding(.bottom, 25)
                 
-                TextField("초기 금액 입력", text: Binding(
+                VStack (alignment: .leading) {
+                    Text("시작 금액")
+                        .padding(.horizontal)
+                    
+                    TextField("초기 금액 입력", text: Binding(
                         get: { formatNumber(principal) },
                         set: { principal = $0.replacingOccurrences(of: ",",with: "") }
                     ))
                     .keyboardType(.decimalPad)
-                    .padding()
-                    .border(Color.gray)
+                    .modifier(TextFieldModifier())
+                }
                 
-                TextField("기간 입력 (년)", text: $time)
-                    .keyboardType(.numberPad)
-                    .padding()
-                    .border(Color.gray)
+                VStack (alignment: .leading) {
+                    Text("투자기간")
+                        .padding(.horizontal)
+                    
+                    TextField("기간 입력 (년)", text: $time)
+                        .keyboardType(.numberPad)
+                        .modifier(TextFieldModifier())
+                }
                 
                 
                 ZStack {
-                    TextField("수익률 입력 (연 수익률)", text: $rate)
-                        .keyboardType(.decimalPad)
-                        .padding()
-                        .border(Color.gray)
-                              
-                        // TextField 오른쪽에 % 기호를 추가
-                        HStack {
-                            Spacer() // 오른쪽에 붙이기 위해 Spacer 사용
-                            Text("%")
-                                .padding(.trailing, 10) // 적당한 간격을 유지
-                                .foregroundColor(.gray)
-                        }
-                        .padding(.horizontal)
+                    VStack (alignment: .leading) {
+                        Text("이자율")
+                            .padding(.horizontal)
+                        
+                        TextField("수익률 입력 (연 수익률)", text: $rate)
+                            .keyboardType(.decimalPad)
+                            .modifier(TextFieldModifier())
+                    }
                 }
                 
                 Button {
