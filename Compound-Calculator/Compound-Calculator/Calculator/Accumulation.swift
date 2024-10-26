@@ -39,10 +39,14 @@ struct Accumulation: View {
                 }
                 
                 VStack (alignment: .leading){
-                    Text("투자기간")
-                        .padding(.horizontal)
+                    HStack {
+                        Text("투자기간")
+                            .padding(.horizontal)
+                        
+                        
+                    }
                     
-                    TextField("투자기간 입력 (년)", text: $time)
+                    TextField("투자기간 입력", text: $time)
                         .modifier(TextFieldModifier())
                 }
                 .padding(.top, 5)
@@ -64,6 +68,7 @@ struct Accumulation: View {
                 } label: {
                     Text("계산하기")
                         .modifier(CalculatorButton())
+                        .padding(.top, 10)
                 }
 
                 

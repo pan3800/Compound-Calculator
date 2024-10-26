@@ -11,7 +11,7 @@ struct CalculatorButton: ViewModifier {
     func body(content: Content) -> some View {
         content
             .padding(12)
-            .frame(width: 200)
+            .frame(width: 300)
             .foregroundStyle(.white)
             .background(.blue)
             .clipShape(RoundedRectangle(cornerRadius: 10))

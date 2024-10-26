@@ -59,6 +59,7 @@ struct Basics: View {
                 } label: {
                     Text("계산하기")
                         .modifier(CalculatorButton())
+                        .padding(.top, 10)
                 }
                 
                 Text("최종 금액: \(result, specifier: "%.0f") 원")

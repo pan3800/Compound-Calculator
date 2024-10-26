@@ -19,6 +19,7 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+                .padding(.top, 10)
                 
            
                 NavigationLink(destination: Accumulation()) {
@@ -28,7 +29,28 @@ struct ContentView: View {
                         .foregroundColor(.white)
                         .cornerRadius(10)
                 }
+                .padding(.top, 10)
                 
+                NavigationLink {
+                    Currency()
+                } label: {
+                    HStack {
+                        Spacer()
+                        Text("화폐 설정")
+                            .padding(.leading, 40)
+                        Spacer()
+                        
+                        Image(systemName: "gearshape")
+                            .padding()
+                            
+                    }
+                    .frame(width: 200, height: 50)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                }
+                .padding(.top, 10)
+           
             }
             .padding()
         }
