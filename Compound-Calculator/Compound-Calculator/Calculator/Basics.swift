@@ -50,16 +50,11 @@ struct Basics: View {
                         .padding(.horizontal)
                 }
                 
-                
-                Button(action: calculateCompoundInterest) {
+                Button {
+                    calculateCompoundInterest()
+                } label: {
                     Text("계산하기")
-                        .frame(width: 150)
-                        .foregroundColor(.gray)
-                        .padding()
-                        .background(Color.white)
-                        .border(Color.gray)
-                        .cornerRadius(1)
-                        .padding(.top, 15)
+                        .modifier(CalculatorButton())
                 }
                 
                 Text("최종 금액: \(result, specifier: "%.0f") 원")

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1943FCD62CCB871900424201 /* TextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943FCD52CCB871900424201 /* TextFieldModifier.swift */; };
+		195B424E2CCCAD7700B8C3D2 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B424D2CCCAD7700B8C3D2 /* CalculatorButton.swift */; };
 		19F9694E2CC909A500DF2593 /* Compound_CalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F9694D2CC909A500DF2593 /* Compound_CalculatorApp.swift */; };
 		19F969502CC909A500DF2593 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F9694F2CC909A500DF2593 /* ContentView.swift */; };
 		19F969522CC909A600DF2593 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19F969512CC909A600DF2593 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1943FCD52CCB871900424201 /* TextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldModifier.swift; sourceTree = "<group>"; };
+		195B424D2CCCAD7700B8C3D2 /* CalculatorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
 		19F9694A2CC909A500DF2593 /* Compound-Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Compound-Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19F9694D2CC909A500DF2593 /* Compound_CalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compound_CalculatorApp.swift; sourceTree = "<group>"; };
 		19F9694F2CC909A500DF2593 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				19F969882CC9164F00DF2593 /* CommonButtonView.swift */,
+				1943FCD52CCB871900424201 /* TextFieldModifier.swift */,
+				195B424D2CCCAD7700B8C3D2 /* CalculatorButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1943FCD62CCB871900424201 /* TextFieldModifier.swift in Sources */,
+				195B424E2CCCAD7700B8C3D2 /* CalculatorButton.swift in Sources */,
 				19F969842CC9107500DF2593 /* Basics.swift in Sources */,
 				19F969502CC909A500DF2593 /* ContentView.swift in Sources */,
 				19F969862CC910A900DF2593 /* Accumulation.swift in Sources */,

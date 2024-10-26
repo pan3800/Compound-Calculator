@@ -10,55 +10,62 @@ struct Accumulation: View {
     var body: some View {
         CommonButtonView {
             VStack(spacing: 20) {
-                Text("적립식 복리 계산기")
+                Text("적립식 계산")
                     .font(.largeTitle)
+                    .padding(.bottom, 25)
                 
-                TextField("초기 금액 입력", text: Binding(
-                    get: { formatNumber(principal) },
-                    set: { principal = $0.replacingOccurrences(of: ",", with: "") }
-                ))
-                .keyboardType(.decimalPad)
-                .padding()
-                .border(Color.gray)
-                
-                TextField("매월 추가 적립금 입력", text: Binding(
-                    get: { formatNumber(payment) },
-                    set: { payment = $0.replacingOccurrences(of: ",", with: "") }
-                ))
-                .keyboardType(.decimalPad)
-                .padding()
-                .border(Color.gray)
-                
-                TextField("기간 입력 (년)", text: $time)
+                VStack (alignment: .leading) {
+                    Text("시작 금액")
+                        .padding(.horizontal)
+                    
+                    TextField("시작 금액 입력", text: Binding(
+                        get: { formatNumber(principal) },
+                        set: { principal = $0.replacingOccurrences(of: ",", with: "") }
+                    ))
                     .keyboardType(.decimalPad)
-                    .padding()
-                    .border(Color.gray)
+                    .modifier(TextFieldModifier())
+                }
+                
+                VStack (alignment: .leading){
+                    Text("매월 적립 금액")
+                        .padding(.horizontal)
+                    
+                    TextField("매월 추가 적립금 입력", text: Binding(
+                        get: { formatNumber(payment) },
+                        set: { payment = $0.replacingOccurrences(of: ",", with: "") }
+                    ))
+                    .keyboardType(.decimalPad)
+                    .modifier(TextFieldModifier())
+                }
+                
+                VStack (alignment: .leading){
+                    Text("투자기간")
+                        .padding(.horizontal)
+                    
+                    TextField("투자기간 입력 (년)", text: $time)
+                        .modifier(TextFieldModifier())
+                }
+                .padding(.top, 5)
 
                 ZStack {
-                    TextField("수익률 입력 (연 수익률)", text: $rate)
-                        .keyboardType(.decimalPad)
-                        .padding()
-                        .border(Color.gray)
-                    
-                    HStack {
-                        Spacer()
-                        Text("%")
-                            .padding(.trailing, 10)
-                            .foregroundColor(.gray)
+                    VStack (alignment: .leading) {
+                        Text("이자율")
+                            .padding(.horizontal)
+                        
+                        TextField("수익률 입력 (연 수익률)", text: $rate)
+                            .keyboardType(.decimalPad)
+                            .modifier(TextFieldModifier())
+
                     }
-                    .padding(.horizontal)
                 }
                 
-                Button(action: calculateCompoundInterest) {
+                Button {
+                    calculateCompoundInterest()
+                } label: {
                     Text("계산하기")
-                        .frame(width: 150)
-                        .foregroundColor(.gray)
-                        .padding()
-                        .background(Color.white)
-                        .border(Color.gray)
-                        .cornerRadius(1)
-                        .padding(.top, 15)
+                        .modifier(CalculatorButton())
                 }
+
                 
                 Text("최종 금액: \(result, specifier: "%.0f") 원")
                     .font(.title)
