@@ -17,7 +17,7 @@ struct Basics: View {
         CommonButtonView {
             
             VStack(spacing: 20) {
-                Text("기본 계산기")
+                Text("복리 계산기")
                     .font(.largeTitle)
                     .padding(.bottom, 25)
                 

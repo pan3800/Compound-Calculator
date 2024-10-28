@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationStack {
             VStack {
                 
                 NavigationLink(destination: Basics()) {
-                    Text("기본 계산")
+                    Text("기본")
                         .frame(width: 200, height: 50)
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -23,7 +24,7 @@ struct ContentView: View {
                 
            
                 NavigationLink(destination: Accumulation()) {
-                    Text("적립식 계산")
+                    Text("적립식")
                         .frame(width: 200, height: 50)
                         .background(Color.blue)
                         .foregroundColor(.white)
@@ -32,11 +33,11 @@ struct ContentView: View {
                 .padding(.top, 10)
                 
                 NavigationLink {
-                    Currency()
+                    SettingView()
                 } label: {
                     HStack {
                         Spacer()
-                        Text("화폐 설정")
+                        Text("설정")
                             .padding(.leading, 40)
                         Spacer()
                         
@@ -50,7 +51,9 @@ struct ContentView: View {
                     .cornerRadius(10)
                 }
                 .padding(.top, 10)
-           
+                
+             
+                
             }
             .padding()
         }
